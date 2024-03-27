@@ -11,11 +11,21 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
+    "@radix-icons/vue": "^1.0.0",
+    "@vueuse/core": "^10.9.0",
+    "appwrite": "^14.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "nuxt": "^3.11.1",
+    "radix-vue": "^1.5.3",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.11.4"
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "nuxt-icon": "^0.6.10",
+    "shadcn-nuxt": "^0.10.2"
   }
 }
