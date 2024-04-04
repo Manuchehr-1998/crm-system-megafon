@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from "vue";
 import { cn } from "@/utils/utils";
 
-const props = defineProps<{
-  class?: HTMLAttributes["class"];
-}>();
+const props = defineProps({
+  class: {
+    type: String,
+    default: "",
+  },
+});
 </script>
 
 <template>
-  <div :class="cn('flex flex-col gap-y-1.5 p-6', props.class)">
+  <div :class="cn('flex flex-col space-y-1.5 p-3', props.class)">
     <slot />
   </div>
 </template>
