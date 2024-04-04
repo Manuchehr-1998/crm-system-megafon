@@ -7,6 +7,13 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
+    "dayjs-nuxt",
+    [
+      "@vee-validate/nuxt",
+      {
+        autoImports: true,
+      },
+    ],
   ],
   shadcn: {
     prefix: "Ui",
@@ -16,4 +23,5 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
   },
+  pages: true,
 });
