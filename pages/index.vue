@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import type { ICard, IColumn } from "~/components/kanban/kanban.types";
-import { convertCurrency } from "@/utils/convertCurrency";
-import dayjs from "dayjs";
-import { useKanbanQuery } from "~/components/kanban/useKanbanQuery";
 import { generateColumnStyle } from "../components/kanban/generate-gradient";
-import { EnumStatus } from "~/types/deals.types";
+import { useKanbanQuery } from "~/components/kanban/useKanbanQuery";
+import { convertCurrency } from "@/utils/convertCurrency";
 import { useMutation } from "@tanstack/vue-query";
+import dayjs from "dayjs";
+import { DB_ID, COLLECTION_DEALS } from "../utils/app.constants";
+import type { ICard, IColumn } from "~/components/kanban/kanban.types";
+import { useDealSlideStore } from "~/store/deals-slide.store";
+import { EnumStatus } from "~/types/deals.types";
 
 useHead({
   title: "Home | CRM SYSTEM",
@@ -15,6 +17,7 @@ const dragCardRef = ref<ICard | null>(null);
 const sourceColumnRef = ref<IColumn | null>(null);
 
 const { data, isLoadding, refetch } = useKanbanQuery();
+const store = useDealSlideStore();
 
 type TypeMutationVaribles = {
   docId: string;
@@ -74,7 +77,7 @@ function handleDrop(targetColumn: IColumn) {
             draggable="true"
             @dragstart="() => handleDragStart(card, column)"
           >
-            <UiCardHeader role="button">
+            <UiCardHeader role="button" @click="store.set(card)">
               <UiCardTitle>
                 {{ card.name }}
               </UiCardTitle>
@@ -89,6 +92,7 @@ function handleDrop(targetColumn: IColumn) {
           </UiCard>
         </div>
       </div>
+      <KanbanSlideover />
     </div>
   </div>
 </template>

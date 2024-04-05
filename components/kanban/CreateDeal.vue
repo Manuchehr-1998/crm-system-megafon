@@ -98,10 +98,3 @@ const onSubmit = handleSubmit((values) => {
     </button>
   </form>
 </template>
-
-function useMutation(arg0: { mutationKey: string[]; mutationFn: (data:
-IDealFormState) => any; onSuccess(): void; }): { mutate: any; isPending: any; }
-{ throw new Error("Function not implemented."); } function useMutation(arg0: {
-mutationKey: string[]; mutationFn: (data: IDealFormState) => any; onSuccess():
-void; }): { mutate: any; isPending: any; } { throw new Error("Function not
-implemented."); }

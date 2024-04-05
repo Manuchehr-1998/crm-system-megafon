@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  ssr: false,
+
   modules: [
-    "nuxt-icon",
+    "@nuxt/ui",
     "@pinia/nuxt",
     "@nuxt/image",
-    "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
     "dayjs-nuxt",
     [
@@ -23,5 +24,4 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
   },
-  pages: true,
 });
